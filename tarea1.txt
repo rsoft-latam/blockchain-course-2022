@@ -1,0 +1,10 @@
+address contract  1 : 0xE6B69BdBBF27473FFa9aEA7435e751CB3BeAf739
+ function getMessage() public view returns(string memory) {
+        return message;
+    }
+
+
+address contract 2 : 0xF864dE7986F45351f55B7fa53177C57063Eb3B85
+ function getMessage() public  returns(string memory) {
+        return message;
+    }
