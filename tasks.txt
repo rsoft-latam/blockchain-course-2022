@@ -1,0 +1,5 @@
+task1 = compare require and if
+task2 = example struct
+task3 = struct details
+task 4 = mapping with struct
+task 5 = paused contract
