@@ -1,0 +1,20 @@
+ - dueño de la libreria
+   - add book
+   - sacar balance total de la libreria
+   - cerrar libreria
+
+
+cliente
+- alquilar un libro, pagar 10eth
+- cuando retorna el libre se le devuelve los 10eth
+- un usuario puede alquilar mas de un libro
+
+
+libro
+ - title
+ - author
+- available
+-price borrow: 20ETH
+
+
+// rinkeby: 12234h3j5h3k45lk3ñ4j5lk3
