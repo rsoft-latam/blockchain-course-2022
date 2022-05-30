@@ -1,0 +1,2 @@
+27-05-2022
+-task 1 pure function
