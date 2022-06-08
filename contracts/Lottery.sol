@@ -11,7 +11,7 @@ contract Lottery {
     }
 
     function enter() public payable {
-        require(msg.value > 2 ether);
+        require(msg.value > 2 ether, "Minimum 2.1 Ether");
         players.push(msg.sender);
     }
 
