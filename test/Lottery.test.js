@@ -29,8 +29,18 @@ contract("Lottery", accounts=> {
     it("require a minimum amount of ether to enter", async ()=> {
         try {
             await instance.enter({from: accounts[1], value: web3.utils.toWei("1", "ether")})
+            assert(false)
         } catch (e) {
             assert.equal("Minimum 2.1 Ether", e.reason)
+        }
+    })
+
+    it("only manager cal call pickWinner", async ()=>{
+        try {
+            await instance.pickWinner({from: accounts[8]});
+            assert(false)
+        } catch (e) {
+            assert.equal("you are not the manager.", e.reason)
         }
     })
 })
