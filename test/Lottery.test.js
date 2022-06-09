@@ -4,6 +4,16 @@ contract("Lottery", accounts=> {
     let instance;
     beforeEach("deploys a contract", async () => {
         instance = await Lottery.new();
+
+/*
+        const riki = web3.utils.keccak256("ricardo")
+        console.log('RIKI:', riki)
+
+        0x7c29c4085e5b512072969e700343c00603f8ee0ea16be7f4bca089c9a3facb2b
+
+
+        0x7c29c4085e5b512072969e700343c00603f8ee0ea16be7f4bca089c9a3facb2b*/
+
     })
 
     it("allows one account to enter", async ()=> {
@@ -45,18 +55,16 @@ contract("Lottery", accounts=> {
     })
 
     it("sends money to the winner and resets the players array", async () => {
-
+       await instance.enter({from: accounts[1], value: web3.utils.toWei("3", "ether")});
        const  initialBalancePlayer = await web3.eth.getBalance(accounts[1])
-       await instance.enter({from: accounts[1], value: web3.utils.toWei("5", "ether")});
        const  initialBalanceLottery = await web3.eth.getBalance(instance.address)
 
        await instance.pickWinner({from: accounts[0]});
-
-       const finalBalancePlayer = await web3.eth.getBalance(accounts[1])
-
-       const difference = finalBalancePlayer - initialBalanceLottery;
-       assert(difference > web3.utils.toWei("4.7", "ether"))
-
+       const  finalBalancePlayer = await web3.eth.getBalance(accounts[1])
+       const total = parseFloat(initialBalancePlayer) + parseFloat(initialBalanceLottery);
+       const players = await instance.getPlayers.call();
+       assert.equal(finalBalancePlayer, total)
+       assert.equal(0, players.length)
     })
 
     //pensando en participar   player 2.2 ETH       lottery 0.0 ETH
