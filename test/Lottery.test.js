@@ -43,4 +43,29 @@ contract("Lottery", accounts=> {
             assert.equal("you are not the manager.", e.reason)
         }
     })
+
+    it("sends money to the winner and resets the players array", async () => {
+
+       const  initialBalancePlayer = await web3.eth.getBalance(accounts[1])
+       await instance.enter({from: accounts[1], value: web3.utils.toWei("5", "ether")});
+       const  initialBalanceLottery = await web3.eth.getBalance(instance.address)
+
+       await instance.pickWinner({from: accounts[0]});
+
+       const finalBalancePlayer = await web3.eth.getBalance(accounts[1])
+
+       const difference = finalBalancePlayer - initialBalanceLottery;
+       assert(difference > web3.utils.toWei("4.7", "ether"))
+
+    })
+
+    //pensando en participar   player 2.2 ETH       lottery 0.0 ETH
+    //apuesta                  player 0 ETH         lottery 2.1 ETH
+    //se hace el sorteo        player 2.0 ETH       lottery 0 ETH
+
+    //pensando en participar   player 100 ETH       lottery 0 ETH
+    //apuesta                  player 5 ETH         lottery 4.8  ETH
+    //se hace el sorteo        player 99.8 ETH       lottery 0 ETH
+
+
 })
