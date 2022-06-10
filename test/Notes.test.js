@@ -19,4 +19,6 @@ contract("Notes", (accounts) => {
     const note = await instance.VerNotas.call("Ricardo Pari");
     assert.equal(5, note);
   });
+
+  it("just proffesor", async () => {});
 });
