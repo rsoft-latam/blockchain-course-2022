@@ -3,8 +3,6 @@ const Notes = artifacts.require("Notes");
 contract("Notes", (accounts) => {
   let instance;
 
-  /*const aux = web3.utils.keccak256("ricardPari")*/
-
   beforeEach("deploys a contract", async () => {
     instance = await Notes.new();
   });
@@ -18,7 +16,6 @@ contract("Notes", (accounts) => {
 
   it("Evaluar 2", async () => {
     await instance.Evaluar("Ricardo Pari", 5, { from: accounts[0] });
-    //const id = web3.utils.keccak256("Ricardo Pari")
     const note = await instance.VerNotas.call("Ricardo Pari");
     assert.equal(5, note);
   });
