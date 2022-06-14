@@ -110,7 +110,6 @@ function App() {
         <p>BALANCE: {balance}</p>
         <p>MANAGER: {manager}</p>
 
-
         <p>Monto minimo mayor a 2 ETH</p>
         <input type="text" value={value} onChange={ (event) => { setValue(event.target.value) } }/>
         <button onClick={ () => { onEnter() } } className="btn btn-warning">Enter</button>
