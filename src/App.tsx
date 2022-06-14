@@ -51,8 +51,6 @@ function App() {
       setManager(manager)
       const balance = await Web3.eth.getBalance(contract.options.address)
       setBalance(balance)
-
-
     }
 
   }
