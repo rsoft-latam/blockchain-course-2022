@@ -17,13 +17,16 @@
     "web-vitals": "^2.1.4",
 
     "web3": "^1.7.3",
-    "web3-utils": "^1.7.3"
+    "web3-utils": "^1.7.3",
+    "truffle-hdwallet-provider": "^1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rinkeby": "truffle migrate --network rinkeby --reset",
+    "bsc": "truffle migrate --network bscTestnet --reset"
   },
   "eslintConfig": {
     "extends": [
