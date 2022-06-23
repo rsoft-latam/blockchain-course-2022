@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {connectWallet, initialize} from "./ethereum/web3";
-import contractLottery from "./ethereum/abis/Lottery.json"
-import * as net from "net";
+//import contractLottery from "./ethereum/abis/Lottery.json"
+import contractLottery from "./ethereum-hardhat/artifacts/src/ethereum-hardhat/contracts/Lottery.sol/Lottery.json"
 
 function App() {
 
@@ -32,14 +32,15 @@ function App() {
     const Web3 = window.web3;
 
     // Rinkeby 4, Ganache 5777, BSC 97
-    const networkData = contractLottery.networks['4'];
-    console.log('networkData:', networkData);
+    //const networkData = contractLottery.networks['4'];
+    //console.log('networkData:', networkData);
 
-    if(networkData) {
+    //if(networkData) {
       const abi = contractLottery.abi;
-      const address = networkData.address;
-      console.log('address: ', address);
-      const contractDeployed = new Web3.eth.Contract(abi, address);
+      //const address = networkData.address;
+     //console.log('address: ', address);
+      //const contractDeployed = new Web3.eth.Contract(abi, address);
+      const contractDeployed = new Web3.eth.Contract(abi, '0x28eC4c1110F3c42112f86fe06523fC969B5330d2');
 
       const players = await contractDeployed.methods.getPlayers().call();
       setPlayers(players);
@@ -49,7 +50,7 @@ function App() {
       setBalance(balance)
 
       setContract(contractDeployed)
-    }
+    //}
 
   }
 
