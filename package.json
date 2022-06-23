@@ -20,12 +20,20 @@
     "web3-utils": "^1.7.3",
     "truffle-hdwallet-provider": "^1.0.17"
   },
+  "devDependencies": {
+    "hardhat": "^2.9.9",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "ethereum-waffle": "^3.4.4",
+    "@nomiclabs/hardhat-ethers": "^2.0.6"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rinkeby": "truffle migrate --network rinkeby --reset"
+    "rinkeby": "truffle migrate --network rinkeby --reset",
+    "goerly-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network goerly",
+    "rinkeby-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network rinkeby"
   },
   "eslintConfig": {
     "extends": [
