@@ -25,8 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rinkeby": "truffle migrate --network rinkeby --reset",
-    "bsc": "truffle migrate --network bscTestnet --reset"
+    "rinkeby": "truffle migrate --network rinkeby --reset"
   },
   "eslintConfig": {
     "extends": [

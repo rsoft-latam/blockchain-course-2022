@@ -18,13 +18,11 @@
  *
  */
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
+const HDWalletProvider = require('truffle-hdwallet-provider');
+const mnemonic = 'aqui va el mnemonic';
+
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
-//const HDWalletProvider = require("truffle-hdwallet-provider");
-const mnemonic = "example of nemonic";
 
 module.exports = {
   /**
@@ -50,20 +48,9 @@ module.exports = {
       network_id: "*"       // Any network (default: none)
     },
     rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/e63a8b56678d41b88cd21f484db2912c'),
-      network_id: "4",
-      gas: 8500000,           // Gas sent with each transaction (default: ~6700000)
-      gasPrice: 20000000000  // 20 gwei (in wei) (default: 100 gwei)
-    },
-    bscTestnet: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://data-seed-prebsc-1-s1.binance.org:8545'),
-      network_id: 97,
-      confirmations: 10,
-      timeoutBlocks: 200,
-      skipDryRun: true
+      provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/539e726ea16641679b773b6096b509c5'),
+      network_id: 4
     }
-
-
     //
     // An additional network, but with some advanced options…
     // advanced: {
@@ -99,7 +86,7 @@ module.exports = {
     // timeout: 100000
   },
 
-  // Configure your compilers
+  // Configure your compile17
   compilers: {
     solc: {
       version: "0.8.14",      // Fetch exact version from solc-bin (default: truffle's version)

@@ -32,7 +32,7 @@ function App() {
     const Web3 = window.web3;
 
     // Rinkeby 4, Ganache 5777, BSC 97
-    const networkData = contractLottery.networks['5777'];
+    const networkData = contractLottery.networks['4'];
     console.log('networkData:', networkData);
 
     if(networkData) {
