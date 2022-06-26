@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 
-const mnemonic = 'aqui va el mnemonic';
-const privateKey = 'aqui va el privateKey';
+const mnemonic = 'aqui va el mneumonic';
+const privateKey = 'aqui va el private key';
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -33,6 +33,13 @@ module.exports = {
     bscTestnet: {
       url: 'https://data-seed-prebsc-1-s1.binance.org:8545',
       chainId: 97,
+      accounts: {
+        mnemonic: mnemonic
+      }
+    },
+    bsc: {
+      url: 'https://bsc-dataseed.binance.org',
+      chainId: 56,
       accounts: {
         mnemonic: mnemonic
       }

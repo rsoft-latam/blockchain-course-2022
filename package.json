@@ -35,7 +35,8 @@
     "bsc-test-truffle": "truffle migrate --network bscTestnet --reset",
     "goerly-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network goerly",
     "rinkeby-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network rinkeby",
-    "bsc-test-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network bscTestnet"
+    "bsc-test-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network bscTestnet",
+    "bsc-hardhat": "npx hardhat run src/ethereum-hardhat/scripts/lottery-script.js --network bsc"
   },
   "eslintConfig": {
     "extends": [
