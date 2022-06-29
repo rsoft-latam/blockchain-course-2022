@@ -5,7 +5,6 @@ import "./ERC20.sol";
 
 contract Main {
 
-
     ERC20 private _token;
     address private owner;
     address private contractAddress;
